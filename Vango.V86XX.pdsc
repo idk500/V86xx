@@ -6,7 +6,7 @@
   <name>V86XX</name>
   <description>V86XX ARM Cortex-M0 Device Family Pack</description>
   <!--CMSIS-pack自动更新或下载的地址 -->
-  <url>https://github.com/idk500/V86xx/blob/master</url>
+  <url>https://raw.githubusercontent.com/idk500/V86xx/master/</url>
   <!--supportContact>support@Vango.com</supportContact-->
   <!-- optional license file -->
   <!-- 
