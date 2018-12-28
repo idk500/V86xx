@@ -37,7 +37,7 @@
       <description>The V85XX device family contains an ARM Cortex-M0 processor.</description>
       <!-- ************************  Subfamily ''  **************************** -->
       <processor Dclock="26214400"/>
-        <!-- *************************  Device 'V86XX'  ***************************** -->
+        <!-- *************************  Device 'V85XX'  ***************************** -->
 				<device Dname="V85XX">
 				<memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
 				<memory id="IRAM1" start="0x20000000" size="0x10000" init ="0" default="1"/>
