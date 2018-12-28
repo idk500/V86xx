@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2"  xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Vango</vendor>
+  <name>V85XX</name>
+  <description>V85XX ARM Cortex-M0 Device Family Pack</description>
+  <url>https://github.com/idk500/V86xx/blob/master</url>
+  <!--supportContact>support@keil.com</supportContact-->
+  <!-- optional license file -->
+  <!-- 
+  <license>
+  </license>
+  -->
+  
+  <releases>
+    <release version="1.0.3" date="2018-07-30">
+      <!--Initial Version-->
+      SVD file included and Device selectable.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Vango</keyword>
+    <keyword>V85XX</keyword>
+  </keywords>
+
+  <!-- devices section (mandatory for Device Family Packs) -->
+    <devices>
+	  	<family Dfamily="V85XX series" Dvendor="Generic:5">
+	  	<compile header="Device/Include/V85XX.h"/>
+	  	<debug svd="SVD/V85XX.svd"/>
+	  	<algorithm name="FLASH/Vango_V85XX.FLM" start="0x00000000" size="0x40000" default="1"/>
+			<processor Dcore="Cortex-M0" DcoreVersion="r0p0" Dmpu="0" Dendian="Little-endian"/>
+      <description>The V85XX device family contains an ARM Cortex-M0 processor.</description>
+      <!-- ************************  Subfamily ''  **************************** -->
+      <processor Dclock="26214400"/>
+        <!-- *************************  Device 'V85XX'  ***************************** -->
+				<device Dname="V85XX">
+				<memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+				<memory id="IRAM1" start="0x20000000" size="0x8000" init ="0" default="1"/>
+				</device>
+	
+			</family>
+  </devices>
+  
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+ <!-- conditions section (optional for all Software Packs)-->
+  <conditions>
+  	<condition id="V85XX CMSIS-Core">  		
+  	<!-- conditions selecting Devices -->
+  	<description>Vango V85XX series devices and CMSIS-core(Cortex-M)</description>
+  	<require Cclass="CMSIS" Cgroup="Core"/>
+  	<require Dvendor="Generic:5" Dname="V85XX"/>
+  	</condition>
+  	<condition id="Startup ARM">   
+  		<description>Startup assembler file for ARMCC</description>   
+  		<require Tcompiler="ARMCC"/> 
+  	</condition>
+  </conditions>
+  
+  <!-- component section (optional for all Software Packs)-->
+  <components>
+  	<component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="V85XX CMSIS-Core">
+  	<description>System Startup for Vango V85XX Series</description>
+  		<files>
+  			<!-- include folder -->
+  			<file category="include" name="Device/Include/"/>  				
+  			<file category="source"  name="Device/Source/ARM/startup_V85XX.s" attr="Compiler" condition="Startup ARM" version="1.0.0"/>
+  		</files>  		
+  	</component>
+  </components>
+
+</package>
