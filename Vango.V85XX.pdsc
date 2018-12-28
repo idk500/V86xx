@@ -4,7 +4,7 @@
   <vendor>Vango</vendor>
   <name>V85XX</name>
   <description>V85XX ARM Cortex-M0 Device Family Pack</description>
-  <url>https://github.com/idk500/V86xx/blob/master</url>
+  <url>https://raw.githubusercontent.com/idk500/V86xx/master/</url>
   <!--supportContact>support@keil.com</supportContact-->
   <!-- optional license file -->
   <!-- 
